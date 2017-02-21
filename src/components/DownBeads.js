@@ -12,7 +12,10 @@ export default class DownBeads extends React.Component {
         if(flag) {
     			for(var i=0;i<=count;i++){
     			    this.props.nums[i] += 40;
+              parent.childNodes[i].style.transition = '.5s'
     			    parent.childNodes[i].style.transform = 'translateY(-40px)'
+              parent.childNodes[i].style.background = 'white'
+              parent.childNodes[i].style.opacity = '1'
     			}
         } else {
         	var val = 120-count*40;
@@ -21,7 +24,10 @@ export default class DownBeads extends React.Component {
         		if(this.props.nums[j] !== val){
         			this.props.nums[j] = val;
         			//??????????
+              // parent.childNodes[j].style.transition = '.5s'
         			parent.childNodes[j].style.transform = 'translateY(0px)'
+              parent.childNodes[j].style.background = '#e0e0e0'
+              parent.childNodes[j].style.opacity = '0.9'
         		}
         		val -= 40;
         	}

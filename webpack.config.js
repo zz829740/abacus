@@ -29,20 +29,20 @@ module.exports = {
 					]
 				}
 			},
-          {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: 'eslint-loader'
-        },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      },
 
-            {
-                test: /\.(woff|svg|eot|ttf)\??.*$/,
-                loader: 'url-loader?limit=50000&name=[path][name].[ext]'
-            },
-            {
-                test: /\.scss$/
-                , loader: "style!css!sass"
-            },
+      {
+          test: /\.(woff|svg|eot|ttf)\??.*$/,
+          loader: 'url-loader?limit=50000&name=[path][name].[ext]'
+      },
+      {
+          test: /\.scss$/,
+          loader: "style!css!sass"
+      }
 		]
 	},
 

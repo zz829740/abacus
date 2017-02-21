@@ -1,6 +1,6 @@
 
 body{
-	background: #f5f5f5;
+	background: #24292e;
 	margin: 0;
 	padding: 0;
 	height: 100%;
@@ -11,16 +11,28 @@ ul,li{
 	margin:0;
 	padding:0;
 }
-.container{
-    position: fixed; 
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-	width: 774px;
-	height: 302px;
-	border: 2px solid red;
+h1,h3{
+  color: #fff;
+  text-align: center;
 }
+h1{
+  font-size: 60px;
+}
+footer{
+  margin-top: 50px;
+}
+.container{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 
+}
+.content{
+  width: 774px;
+  height: 312px;
+  box-shadow: 0px 0px 25px 15px #fff;
+}
 .abacus-list{
 	margin: 0 auto;
 	height: 252px;
@@ -38,7 +50,7 @@ ul,li{
 .up-beads-container{
 	height: 100px;
 	width: 110px;
-	border-bottom: 3px solid green;
+	border-bottom: 5px solid #999;
 	overflow: hidden;
 	position: relative;
 
@@ -47,16 +59,16 @@ ul,li{
 .down-beads-container{
 	width: 110px;
 	height: 200px;
-	border-top: 3px solid green;
+	border-top: 3px solid #999;
 	overflow: hidden;
 	position: relative;
 }
 
 .up-vertical-pole, .down-vertical-pole{
-	
+
 	width: 5px;
 	height: 100px;
-	background: green;	
+	background: #999;
 	margin: 0 auto;
 }
 
@@ -68,22 +80,17 @@ ul,li{
 	width: 60px;
 	height: 40px;
 	border-radius: 50%;
-	background: purple;
+	background: #e0e0e0;
 	left: 25%;
 	top: 0;
 	position: absolute;
 	display: block;
+  opacity: 0.9;
 }
-.upbeaddown{
-	width: 60px;
-	height: 40px;
-	border-radius: 50%;
-	background: purple;
-	left: 25%;
-	
-	position: absolute;
-	display: block;
-	bottom: 0;
+
+#source{
+  color: #fff;
+  margin-left: 10px;
 }
 
 .downbead{
@@ -91,19 +98,23 @@ ul,li{
 	bottom: 0;
 	width: 60px;
 	height: 40px;
-	background: purple;
+	background: #e0e0e0;
 	margin-left: 25%;
 	border-radius: 50%;
-
+  opacity: 0.9;
 }
+
 
 .downbead:nth-child(1){
 	bottom: 120px;
+
 }
 
 .downbead:nth-child(2){
 	bottom: 80px;
+
 }
 .downbead:nth-child(3){
 	bottom: 40px;
+
 }

@@ -24,12 +24,21 @@ class Main extends React.Component {
 	render(){
 
 		return (
+
 			<div className="container">
-				<ul className="abacus-list" >
-					{this.state.ups.map((up,index)=>{
-						return <AbacusItem  key={index} index={index} down={this.state.downs[index]} up={this.state.ups[index].isUp} />
-					})}
-				</ul>
+        <header>
+          <h1>Abacus</h1>
+        </header>
+        <div className="content">
+  				<ul className="abacus-list" >
+  					{this.state.ups.map((up,index)=>{
+  						return <AbacusItem  key={index} index={index} down={this.state.downs[index]} up={this.state.ups[index].isUp} />
+  					})}
+  				</ul>
+        </div>
+        <footer>
+          <h3>Copyright ©Jane Wu -<a id='source' href="https://github.com/WJane/abacus">source</a></h3>
+        </footer>
 			</div>
 		)
 	}
