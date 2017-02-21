@@ -1,8 +1,7 @@
 'use strict';
-import React from "react";
-// import AbacusMain from "./components/AbacusMain.js"
+import React from 'react';
 import './main.scss'
-import AbacusItem from "./components/AbacusItem.js"
+import AbacusItem from './components/AbacusItem.js'
 
 class Main extends React.Component {
 	constructor(){
@@ -18,15 +17,9 @@ class Main extends React.Component {
 			 		{isDown:1, nums:[120,80,40,0]}
 			 	]
 		}
-		
+
 	}
 
-
-	changeUp(index, flag){
-		
-		this.state.ups[index].isUp = flag;
-		
-	}
 
 	render(){
 
@@ -34,13 +27,13 @@ class Main extends React.Component {
 			<div className="container">
 				<ul className="abacus-list" >
 					{this.state.ups.map((up,index)=>{
-						return <AbacusItem  key={index} index={index} down={this.state.downs[index]} up={this.state.ups[index].isUp} changeUp={this.changeUp.bind(this)}/>
+						return <AbacusItem  key={index} index={index} down={this.state.downs[index]} up={this.state.ups[index].isUp} />
 					})}
 				</ul>
 			</div>
 		)
 	}
-	
+
 }
 
-React.render(<Main/>, document.getElementById("app"));
+React.render(<Main/>, document.getElementById('app'));
