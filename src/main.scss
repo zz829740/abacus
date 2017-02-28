@@ -135,7 +135,7 @@ header{
   margin-left: 90px;
   display:inline-block;
   clear: both;
-
+  position: relative;
   width: 100px;
   height: 100px;
   button{
@@ -154,5 +154,20 @@ header{
     background: #24292e;
     color:white;
     outline: 1px solid white;
+  }
+
+  #result{
+    display:inline-block;
+    position: absolute;
+    width:80px;
+    height: 30px;
+    line-height: 30px;
+    left: 150px;
+    bottom: 5px;
+    color: white;
+    font-size:1.9em;
+
+    letter-spacing: 0.1em;
+    text-shadow: 2px 2px 2px #fefefe;
   }
 }

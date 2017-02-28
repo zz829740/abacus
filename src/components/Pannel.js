@@ -20,7 +20,7 @@ export default class Panel extends React.Component{
       <div id="pannel" className = "pannel">
         <button {...this.props} onClick={this.props.clearAll} className='control clear'>Clear beads</button>
         <button onClick={this.props.showNum} className='control show'>Show value</button>
-        <div ref="result"></div>
+        <span id="result">1568</span>
       </div>
     )
 

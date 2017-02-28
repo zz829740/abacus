@@ -25,13 +25,20 @@ class Main extends React.Component {
 	}
 
   showNum(){
+    var total = 0;
     var downs = this.state.downs;
+    var fives = this.state.ups;
     var res = [];
+    var f = [];
     var head = [];
     var str = '';
     for(var i=0;i<7;i++){
       var cur = downs[i].nums;
-
+      var five = fives[i].isUp;
+      if(five){
+        head.push(i)
+        f.push(i)
+      }
       for(var j=0;j<4;j++){
         if(cur[j] != 120-j*40){
           if(res[res.length-1] && res[res.length-1][0]== i){
@@ -45,14 +52,95 @@ class Main extends React.Component {
 
     }
 
-    for(var s=res[0][0];s<res[res.length-1][0];s++){
-      if(head.indexOf(s)){
-        str+=res[s][1];
-      }else{
-        str+=0;
-      }
+     let set = new Set(head);
+
+    let array = Array.from(set);
+    // console.log(array)
+    var weishu = array[array.length-1]-array[0];
+    console.log('位数：'+weishu)
+
+    // if(res.length==0&&f.length==0){
+    //   total = 0;
+    // }else if(res.length == 0 && f.length>0){
+
+    // }else if(res.length>0&&f.length==0){
+
+    // }else{
+
+    // }
+
+
+
+
+
+
+
+    // for(let [k,v] of f.entries()){
+    //   // console.log(head)
+    //   // console.log(v)
+    //   // console.log(array.indexOf(v))
+
+    //   // var g = weishu+fs-v
+    //   // console.log(v)
+
+    //   // g = g-1<0?g:g-1
+    //   total+=Math.pow(10,g)*5;
+    // }
+
+    // var obj = {};
+
+    var start = res[0][0];
+
+    for(let [index,item] of res.entries()){
+      // obj[item[0]]=item[1]
+
+      var weight = weishu - (item[0]-start);
+
+      total+=Math.pow(10,weight)*(parseInt(item[1])+1)
+      // total+=weight*10*(parseInt(item[1])+1);
+      // total+=weight*10*(item[1]+1)
+
+      // alert(parseInt(item[0]*(weight*100)))
     }
-    console.log(str)
+
+
+    // for(var i=0;i<f.length;i++){
+    //   var weight = weishu - (i-start);
+    //   alert(weight)
+    //   total+=Math.pow(10,weight)*5;
+    // }
+
+
+        // var fs = f[0];
+
+        document.getElementById('result').innerHTML = ''+total;
+
+    // console.log(f)
+    //上边的
+    //??????????????一大堆问题
+    // for(var i=0;i<f.length;i++){
+    //   var g = 2*weishu-f[i] +1;
+    //   g<0?g=0:g;
+    //   total += parseInt(Math.pow(10,g)*5)
+    // }
+
+    // console.log('total:'+total);
+
+
+
+
+
+    //polyfill
+    // for(var s=res[0][0];s<res[res.length-1][0];s++){
+    //   if(head.indexOf(s)){
+
+    //     console.log(obj[res[0][0]]);
+    //   }else{
+    //     str+=0;
+    //   }
+    // }
+    // console.log('00000000')
+    // console.log(str)
 
   }
 
