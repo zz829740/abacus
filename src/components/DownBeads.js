@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react'
-
+import {render} from 'react-dom'
 export default class DownBeads extends React.Component {
 //不知道为什么根据parent.props.children取不到dom
     handledownClick(e){
