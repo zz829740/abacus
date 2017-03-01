@@ -35,7 +35,7 @@ footer{
 }
 .abacus-list{
 	margin: 0 auto;
-	height: 252px;
+	height: 322px;
 	width: 774px;
 	position: relative;
 }
@@ -45,6 +45,17 @@ footer{
 	height: 252px;
 	position: relative;
 	display: inline-block;
+  .unit{
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    color: white;
+    right: 20px;
+    top: -60px;
+    text-align:center;
+    line-height: 30px;
+    font-size: 1.5em;
+  }
 }
 
 .up-beads-container{
@@ -128,7 +139,7 @@ h1{
 header{
   text-align: center;
   vertical-align: middle;
-  margin-bottom:20px;
+  margin-bottom:50px;
 }
 .pannel{
   vertical-align: middle;
@@ -156,6 +167,7 @@ header{
     outline: 1px solid white;
   }
 
+
   #result{
     display:inline-block;
     position: absolute;
@@ -163,7 +175,7 @@ header{
     height: 30px;
     line-height: 30px;
     left: 150px;
-    bottom: 5px;
+    bottom: 20px;
     color: white;
     font-size:1.9em;
 

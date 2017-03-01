@@ -19,7 +19,8 @@ class Main extends React.Component {
 			 		{isDown:1, nums:[120,80,40,0]},
 			 		{isDown:1, nums:[120,80,40,0]}
 			 	],
-        clearAll: false
+        clearAll: false,
+        units: ['百万','十万','万','千','百','十','个']
 		}
 
 	}
@@ -55,92 +56,21 @@ class Main extends React.Component {
      let set = new Set(head);
 
     let array = Array.from(set);
-    // console.log(array)
+
     var weishu = array[array.length-1]-array[0];
-    console.log('位数：'+weishu)
-
-    // if(res.length==0&&f.length==0){
-    //   total = 0;
-    // }else if(res.length == 0 && f.length>0){
-
-    // }else if(res.length>0&&f.length==0){
-
-    // }else{
-
-    // }
-
-
-
-
-
-
-
-    // for(let [k,v] of f.entries()){
-    //   // console.log(head)
-    //   // console.log(v)
-    //   // console.log(array.indexOf(v))
-
-    //   // var g = weishu+fs-v
-    //   // console.log(v)
-
-    //   // g = g-1<0?g:g-1
-    //   total+=Math.pow(10,g)*5;
-    // }
-
-    // var obj = {};
 
     var start = res[0][0];
 
     for(let [index,item] of res.entries()){
-      // obj[item[0]]=item[1]
-
       var weight = weishu - (item[0]-start);
-
       total+=Math.pow(10,weight)*(parseInt(item[1])+1)
-      // total+=weight*10*(parseInt(item[1])+1);
-      // total+=weight*10*(item[1]+1)
 
-      // alert(parseInt(item[0]*(weight*100)))
     }
 
-
-    // for(var i=0;i<f.length;i++){
-    //   var weight = weishu - (i-start);
-    //   alert(weight)
-    //   total+=Math.pow(10,weight)*5;
-    // }
+    //此处有bug
+    // document.getElementById('result').innerHTML = ''+total;
 
 
-        // var fs = f[0];
-
-        document.getElementById('result').innerHTML = ''+total;
-
-    // console.log(f)
-    //上边的
-    //??????????????一大堆问题
-    // for(var i=0;i<f.length;i++){
-    //   var g = 2*weishu-f[i] +1;
-    //   g<0?g=0:g;
-    //   total += parseInt(Math.pow(10,g)*5)
-    // }
-
-    // console.log('total:'+total);
-
-
-
-
-
-    //polyfill
-    // for(var s=res[0][0];s<res[res.length-1][0];s++){
-    //   if(head.indexOf(s)){
-
-    //     console.log(obj[res[0][0]]);
-    //   }else{
-    //     str+=0;
-    //   }
-    // }
-    // console.log('00000000')
-    // console.log(str)
 
   }
 
@@ -184,7 +114,7 @@ class Main extends React.Component {
         <div className="content">
   				<ul className="abacus-list" >
   					{this.state.ups.map((up,index)=>{
-  						return <AbacusItem ref='item' clearAll={this.state.clearAll} {...this.props} changeUpState={::this.changeUpState} key={index} index={index} down={this.state.downs[index]} up={this.state.ups[index].isUp} />
+  						return <AbacusItem ref='item' clearAll={this.state.clearAll} {...this.props} changeUpState={::this.changeUpState} key={index} index={index} down={this.state.downs[index]} unit={this.state.units[index]} up={this.state.ups[index].isUp} />
   					})}
   				</ul>
         </div>
